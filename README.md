@@ -1,4 +1,4 @@
-> # inscripsion de ramos#
+> # inscripsion de ramos #
 > aprendiendo a usar el lunguaje PHP
 
 # un intento de intranet 
