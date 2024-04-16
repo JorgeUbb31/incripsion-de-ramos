@@ -1,4 +1,15 @@
-# incripsion-de-ramos
+> # inscripsion de ramos#
+> se puede xd
 
--una prueba de como se hace una inscripsion de ramos
+# un intento de intranet 
 
+### materiar usadas o programas
+
+- Xampp
+- Visual code
+- Apache
+- Mysql
+
+### Programador
+
+- Jorge Diaz
