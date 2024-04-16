@@ -1,5 +1,5 @@
 > # inscripsion de ramos#
-> se puede xd
+> aprendiendo a usar el lunguaje PHP
 
 # un intento de intranet 
 
