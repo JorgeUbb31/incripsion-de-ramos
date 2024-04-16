@@ -2,11 +2,11 @@
     color: rgb(0, 0, 0);
     text-align: center;
     text-transform: capitalize;
-    text-decoration-line: underline;
-    text-decoration-color: rgb(76, 0, 255);
     background-color: rgb(28, 212, 52);
 }
 .black-bg {
-    color:  blue ;
     background-color: yellowgreen ;
+}
+.d-grid{
+    text-align: left;
 }
