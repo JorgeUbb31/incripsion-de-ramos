@@ -1,10 +1,7 @@
 <?php
-
-include "models\conexion.php";
+include "models/conexion.php";
 $id_R=$_GET["id_R"];
-
-$sql=$conexion->query("select * from ramos where id_R=$id_R")
-
+$sql=$conexion->query("SELECT * FROM `ramos` WHERE id_R='$id_R' ");
 ?>
 
 
@@ -34,7 +31,7 @@ $sql=$conexion->query("select * from ramos where id_R=$id_R")
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">creditos</label>
-                <input type="number" class="form-control" name="creditos" value="<?= $datos->edad?>">
+                <input type="number" class="form-control" name="creditos" value="<?= $datos->creditos?>">
             </div>
         <?php }
         ?>

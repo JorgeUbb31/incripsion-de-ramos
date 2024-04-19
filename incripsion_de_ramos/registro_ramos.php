@@ -21,7 +21,6 @@
             <form class="col-4 p-3" method="post">
                 <div class="registro">
                 <h3 class="text-center text-secondary" >ingreso de ramos</h3>
-                <input type="hidden" name="id_E" value="<?=$_GET["id_E"]?>">
                 </div>
                 <?php
                 include "models/conexion.php";

@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="view/style.css">
 </head>
 <body>
+    <script>
+        function eliminar() {
+            var respuesta=confirm("¿seguro al eliminar usuario?");
+            return respuesta
+        }
+    </script>
     <h1>
         <div class="registroA">registro de estudiantes</div>
         <div class="container-fluid row">
@@ -19,6 +25,7 @@
                 <?php
                 include "models/conexion.php";
                 include "controller/registrar_alumno.php";
+                include "controller/eliminar_alumno.php";
                 ?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">nombre</label>
@@ -65,7 +72,7 @@
 
 
                                         <a href="modificaar_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                                        <a onclick="return eliminar()" href="registro_alumno.php" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
+                                        <a onclick="return eliminar()" href="registro_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
                                     </td>
                                 </tr>
                             <?php }

@@ -19,6 +19,7 @@ $sql=$conexion->query("select * from alumnos where id_E=$id_E")
 </head>
 <body>
     <form class="col-4 p-3 m-auto" method="post">
+
         <div class="registro">
             <h3 class="text-center text-secondary" >modificaion de estudiante</h3>
         </div>
@@ -27,11 +28,11 @@ $sql=$conexion->query("select * from alumnos where id_E=$id_E")
         while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">nombre</label>
-                <input type="text" class="form-control" name="nombre" value="<?= $datos->Nombre?>">
+                <input type="text" class="form-control" name="nombre" value="<?= $datos->Nombre?>" maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">apellido</label>
-                <input type="text" class="form-control" name="apellido"value="<?= $datos->apellido?>">
+                <input type="text" class="form-control" name="apellido"value="<?= $datos->apellido?>"  maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">edad</label>
