@@ -21,7 +21,12 @@
             <form class="col-4 p-3" method="post">
                 <div class="registro">
                 <h3 class="text-center text-secondary" >ingreso de ramos</h3>
+                <input type="hidden" name="id_E" value="<?=$_GET["id_E"]?>">
                 </div>
+                <?php
+                include "models/conexion.php";
+                include "controller/registro_ramos.php";
+                ?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">nombre del ramo</label>
                     <input type="text" class="form-control" name="nombre" maxlength="10">
@@ -45,15 +50,25 @@
                     <th scope="col"></th>
                     </tr>
                 </thead>
-                    <tbody>
-                                <tr>
+                <tbody>
+                    <?php
+                    include "models/conexion.php";
+                    $sql=$conexion->query("select * from ramos");
+                    while ($datos=$sql->fetch_object()) { ?>
+                        <tr>
+                            <td class="p-3 small"><?= $datos->id_R?></td>
+                            <td class="p-3 small"><?= $datos->Nombre_R?></td>
+                            <td class="p-3 small"><?= $datos->creditos?></td>
                                   
-                                    <td>
-                                        <a href="modificar_alumno.php" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                                        <a onclick="return eliminar()" href="registro_ramos.php" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                    </tbody>
+                            <td>
+                                <a href="modificar_ramo.php" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a onclick="return eliminar()" href="registro_ramos.php" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    <?php } 
+                    ?>
+
+                </tbody>
             </table>
         </div>
         </div>
