@@ -1,9 +1,49 @@
 .blue-text {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
     text-align: center;
     text-transform: capitalize;
     background-color: rgb(28, 212, 52);
 }
 .black-bg {
     background-color: yellowgreen ;
+}
+.bg{
+    background-color: aquamarine;
+}
+.Iramos{
+    text-align: center;
+    text-transform: capitalize;
+    color: rgb(124, 83, 22);
+}
+.registroA{
+    text-align: center;
+    text-transform: capitalize;
+    color: rgb(47, 99, 99);
+}
+.mb-3{
+    font-size: 20px;
+    color: rgb(47, 99, 99);
+    text-transform: capitalize;
+    height: auto;
+    width: auto;
+}
+.registro{
+    text-transform: capitalize;
+}
+.form-select{
+    font-size: small;
+    height: auto;
+    width: auto;
+    margin-block-start: 5pc;
+    margin-left: 40pc;
+}
+.btn{
+    font-size: 15px;
+}
+.bg-info{
+    text-transform: capitalize;
+    font-size: 15px;
+}
+.p-3{
+    font-size: 15px;
 }
