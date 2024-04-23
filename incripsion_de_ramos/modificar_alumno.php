@@ -1,6 +1,7 @@
 <?php
 include "models/conexion.php";
-
+$id=$_GET["id_E"];
+$sql=$conexion->query("SELECT * FROM alumnos WHERE id_E=$id");
 ?>
 
 <!DOCTYPE html>
@@ -17,25 +18,25 @@ include "models/conexion.php";
         <div class="registro">
             <h3 class="text-center text-secondary" > Modificar estudiante</h3>
         </div>
-        <input type="hidden" name="id" value="<?= $_GET["id_R"]?>">
+        <input type="hidden" name="id" value="<?= $_GET["id_E"]?>">
         <?php
         include "controller\modificar_alumno.php";
         while ($datos=$sql->fetch_object()) { ?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">nombre</label>
-                <input type="text" class="form-control" name="Nombre"  maxlength="10">
+                <input type="text" class="form-control" name="Nombre" value="<?= $datos->Nombre?>" maxlength="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">apellido</label>
-                <input type="text" class="form-control" name="apellido">
+                <input type="text" class="form-control" name="apellido" value="<?= $datos->apellido?>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">edad</label>
-                <input type="number" class="form-control" name="edad">
+                <input type="number" class="form-control" name="edad" value="<?= $datos->edad?>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">rut</label>
-                <input type="text" class="form-control" name="rut">
+                <input type="text" class="form-control" name="rut" disabled value="<?= $datos->rut?>">
             </div>
         <?php }
         ?>
