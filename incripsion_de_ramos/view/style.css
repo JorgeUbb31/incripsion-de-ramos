@@ -39,6 +39,7 @@
 }
 .btn{
     font-size: 15px;
+    text-transform: capitalize;
 }
 .bg-info{
     text-transform: capitalize;

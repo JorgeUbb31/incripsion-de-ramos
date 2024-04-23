@@ -25,6 +25,7 @@
                 <?php
                 include "models/conexion.php";
                 include "controller/registro_ramo.php";
+                include "controller/eliminar_ramo.php";
                 ?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">nombre del ramo</label>
@@ -60,8 +61,8 @@
                             <td class="p-3 small"><?= $datos->creditos?></td>
                                   
                             <td>
-                                <a href="modificar_ramo.php" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a onclick="return eliminar()" href="registro_ramos.php" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="modificar_ramo.php?id_R=<?= $datos->id_R ?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a onclick="return eliminar()" href="registro_ramos.php?id_R=<?= $datos->id_R ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } 
@@ -72,6 +73,6 @@
         </div>
         </div>
     </h1>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
