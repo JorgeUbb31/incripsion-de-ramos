@@ -11,7 +11,7 @@
 <body>
     <script>
         function eliminar() {
-            var respuesta=confirm("¿seguro al eliminar usuario?");
+            var respuesta=confirm("eliminar alumno");
             return respuesta
         }
     </script>
@@ -71,8 +71,9 @@
                                     <td>
 
 
-                                        <a href="modificaar_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                                        <a onclick="return eliminar()" href="registro_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
+                                        <a href="modificar_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        <a onclick="return eliminar()" href="registro_alumno.php?id_E=<?= $datos->id_E ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
+
                                     </td>
                                 </tr>
                             <?php }

@@ -24,7 +24,7 @@
                 </div>
                 <?php
                 include "models/conexion.php";
-                include "controller/registro_ramos.php";
+                include "controller/registro_ramo.php";
                 ?>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">nombre del ramo</label>
