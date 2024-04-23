@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="view/style.css">
 </head>
 <body>
+    <a href="index.php" class="btn btn-small btn-warning">inicio</a>
     <script>
         function eliminar() {
             var respuesta=confirm("eliminar alumno");

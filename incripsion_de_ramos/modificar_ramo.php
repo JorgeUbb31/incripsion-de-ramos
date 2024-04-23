@@ -28,7 +28,7 @@ $sql=$conexion->query("SELECT * FROM ramos WHERE id_R=$id_R");
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">créditos</label>
-                <input type="text" class="form-control" name="creditos" value="<?= $datos->creditos ?> ">
+                <input type="number" class="form-control" name="creditos" value="<?= $datos->creditos ?> ">
             </div>
         <?php }
         ?>

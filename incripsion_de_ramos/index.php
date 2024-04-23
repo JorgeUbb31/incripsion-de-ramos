@@ -1,15 +1,3 @@
-<?php
-include "models/conexion.php";
-
-$sql_estudiantes = "SELECT id_E, Nombre FROM alumnos";
-$resultado_estudiantes = $conexion->query($sql_estudiantes);
-
-$sql_ramos = "SELECT id_R, Nombre_R FROM ramos";
-$resultado_ramos = $conexion->query($sql_ramos);
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +9,12 @@ $resultado_ramos = $conexion->query($sql_ramos);
     <link rel="stylesheet" href="view/style.css">
 </head>
 <body class="black-bg">
+    <script>    
+        function eliminar() {
+            var respuesta=confirm("¿seguro al eliminar el Ramo?");
+            return respuesta
+        }
+    </script>
     <h1 class="blue-text">Inscripción de ramos</h1>
     <div class="row">
         <div class="col-md-6">
@@ -30,27 +24,30 @@ $resultado_ramos = $conexion->query($sql_ramos);
             <a href="registro_ramos.php" class="btn btn-primary" type="button" name="ramo">Ramos</a>
         </div>
     </div>
-    <?php
-    include "controller/inscribir.php";
-    ?>
-    <select class="form-select form-select-sm mb-3" aria-label="small select example">
-        <option selected>ESTUDIANTE</option>
+    <form method="post">
         <?php
-        while ($row = $resultado_estudiantes->fetch_assoc()) {
-            echo "<option value='" . $row['id_E'] . "'>" . $row['Nombre'] . "</option>";
-        }
+        include "controller/inscribir.php";
+        include "controller/eliminar_inscripsion.php"
         ?>
-    </select>
+        <select name="estudiante" class="form-select form-select-sm mb-3" aria-label="small select example">
+            <option selected>ESTUDIANTE</option>
+            <?php
+            while ($row = $resultado_estudiantes->fetch_assoc()) {
+                echo "<option value='" . $row['id_E'] . "'>" . $row['Nombre'] . "</option>";
+            }
+            ?>
+        </select>
 
-    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-        <option selected>RAMOS</option>
-        <?php
-        while ($row = $resultado_ramos->fetch_assoc()) {
-            echo "<option value='" . $row['id_R'] . "'>" . $row['Nombre_R'] . "</option>";
-        }
-        ?>
-    </select>
-    <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Inscribir ramos</button>
+        <select name="ramo" class="form-select form-select-sm mb-3" aria-label="Small select example">
+            <option selected>RAMOS</option>
+            <?php
+            while ($row = $resultado_ramos->fetch_assoc()) {
+                echo "<option value='" . $row['id_R'] . "'>" . $row['Nombre_R'] . "</option>";
+            }
+            ?>
+        </select>
+        <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Inscribir ramos</button>
+    </form>
     <table class="table">
         <thead>
             <tr>
@@ -63,19 +60,17 @@ $resultado_ramos = $conexion->query($sql_ramos);
         </thead>
         <tbody>
             <?php
-            $sql=$conexion->query("select * from incribir");
-            while($datos=$sql->fetch_object()){ ?>
-            <tr>
-                <td class="p-3 small"><?= $datos->id_E?></td>
-                <td class="p-3 small"><?= $datos->Nombre_E?></td>
-                <td class="p-3 small"><?= $datos->id_R?></td>
-                <td class="p-3 small"><?= $datos->Nombre_R?></td>>
-                <td>
-                    <a href="modificar_alumno.php?id_E=<?= $datos->id_E?>" class="btn btn-small btn-warning"><i class="fa-regular fa-pen-to-square"></i></a>
-                    <a onclick="return eliminar()" href="registro_alumno.php?id_E=<?= $datos->id_E ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
-
-                </td>
-            </tr>
+            $sql = $conexion->query("SELECT i.*, a.Nombre AS Nombre_E, r.Nombre_R FROM incribir i JOIN alumnos a ON i.id_E = a.id_E JOIN ramos r ON i.id_R = r.id_R");
+            while ($datos = $sql->fetch_object()) { ?>
+                <tr>
+                    <td class="p-3 small"><?= $datos->id_E ?></td>
+                    <td class="p-3 small"><?= $datos->Nombre_E ?></td>
+                    <td class="p-3 small"><?= $datos->id_R ?></td>
+                    <td class="p-3 small"><?= $datos->Nombre_R ?></td>
+                    <td>
+                        <a onclick="return eliminar()" href="index.php?id_I=<?= $datos->id_I ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-user-slash"></i></a>
+                    </td>
+                </tr>
             <?php }
             ?>
         </tbody>
@@ -84,4 +79,5 @@ $resultado_ramos = $conexion->query($sql_ramos);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
 

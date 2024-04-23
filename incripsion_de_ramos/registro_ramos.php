@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="view/style.css">
 </head>
 <body>
+    <a href="index.php" class="btn btn-small btn-warning">inicio</a>
     <script>    
         function eliminar() {
             var respuesta=confirm("¿seguro al eliminar el Ramo?");
@@ -33,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">creditos</label>
-                    <input type="text" class="form-control" name="creditos">
+                    <input type="number" class="form-control" name="creditos">
                 </div>
                 <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Registrar</button>
             </form>
