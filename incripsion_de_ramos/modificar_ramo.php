@@ -5,7 +5,7 @@ $sql=$conexion->query("SELECT * FROM ramos WHERE id_R=$id_R");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,5 +35,7 @@ $sql=$conexion->query("SELECT * FROM ramos WHERE id_R=$id_R");
     
         <button type="submit" class="btn btn-primary" name="btnregister" value="ok">modificar</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
